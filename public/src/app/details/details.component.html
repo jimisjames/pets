@@ -1,0 +1,42 @@
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO'
+  crossorigin='anonymous'> <!-- Bootstrap -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> <!-- jQuery -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49'
+  crossorigin='anonymous'></script> <!-- Bootstrap -->
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy'
+  crossorigin='anonymous'></script> <!-- Bootstrap -->
+
+
+<body *ngIf="pet">
+  <button class="btn btn-warning" [routerLink]="['/pets']">Back to Pets</button>
+  <h2>Details for {{pet.name}}</h2>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>Type:</th>
+        <td>{{pet.type}}</td>
+      </tr>
+      <tr>
+        <th>Description:</th>
+        <td>{{pet.description}}</td>
+      </tr>
+      <tr>
+        <th>Skills:</th>
+        <td>
+          <h6>{{pet.skill_one}}</h6>
+          <h6>{{pet.skill_two}}</h6>
+          <h6>{{pet.skill_three}}</h6>
+        </td>
+      </tr>
+      <tr>
+        <th>Likes:</th>
+        <td>{{pet.likes}}</td>
+      </tr>
+      <tr>
+        <th><button class="btn btn-primary" [disabled]="button" (click)="like()">Like this pet</button></th>
+        <th><button class="btn btn-warning" [routerLink]="['edit']">Edit</button></th>
+        <td><button class="btn btn-success" (click)="delete()">Adopt this pet!</button></td>
+      </tr>
+    </tbody>
+  </table>
+</body>

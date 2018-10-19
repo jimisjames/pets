@@ -1,0 +1,41 @@
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO'
+  crossorigin='anonymous'> <!-- Bootstrap -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> <!-- jQuery -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49'
+  crossorigin='anonymous'></script> <!-- Bootstrap -->
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy'
+  crossorigin='anonymous'></script> <!-- Bootstrap -->
+
+<body>
+  <button class="btn btn-warning" [routerLink]="['/pets']">Back to all pets</button>
+  <h3>Add a pet to the shelter:</h3>
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="newPet.name" [(ngModel)]="newPet.name" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="type">Type</label>
+      <input type="text" class="form-control" id="type" name="newPet.type" [(ngModel)]="newPet.type" placeholder="Enter type">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" name="newPet.description" [(ngModel)]="newPet.description" placeholder="Enter description">
+    </div>
+    <h5>Skills: <small>(optional)</small></h5>
+    <div class="form-group">
+      <label for="skill_one">One</label>
+      <input type="text" class="form-control" id="skill_one" name="newPet.skill_one" [(ngModel)]="newPet.skill_one" placeholder="Enter skill">
+    </div>
+    <div class="form-group">
+      <label for="skill_two">Two</label>
+      <input type="text" class="form-control" id="skill_two" name="newPet.skill_two" [(ngModel)]="newPet.skill_two" placeholder="Enter skill">
+    </div>
+    <div class="form-group">
+      <label for="skill_three">Three</label>
+      <input type="text" class="form-control" id="skill_three" name="newPet.skill_three" [(ngModel)]="newPet.skill_three" placeholder="Enter skill">
+    </div>
+    <p class="red" *ngFor="let error of flash">{{error}}</p>
+    <button class="btn btn-primary" (click)="add()">Submit</button>
+  </form>
+</body>
